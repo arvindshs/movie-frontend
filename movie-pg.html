@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie name
+    </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c6dd776b23.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="progress">
+        <span id="progress-value"></span>
+    </div>
+
+
+    <nav class="navigation">
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="nav-icon"></span>
+        </label>
+
+        <a href="#" class="logo">
+            Watch<span>Movie</span>
+        </a>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Genre</a></li>
+            <li><a href="#">Series</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Content</a></li>
+        </ul>
+
+        <form action="" class="search-box">
+            <input type="text" name="search" placeholder="Search Movies" class="serch-input" required />
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+
+    <section class="movie-banner">
+
+        <div class="m-banner-img">
+            <img src="/images/Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/cover.jpg" alt="">
+        </div>
+        <div class="banner-container">
+            <div class="title-container">
+                <div class="title-top">
+                    <div class="movie-title">
+                        <h1>Pirates of the Caribbean Salazar's Revenge</h1>
+                    </div>
+                    <div class="more-abt-movie">
+                        <span class="quality">FUll-HD</span>
+                        <div class="rating">
+                            8.2 <img src="/images/IMDb-icon.png" alt="">
+                        </div>
+                        <span>28 August 2017</span>
+                        <span>87 min</span>
+                    </div>
+                    <div class="lang">
+                        <span>English</span>
+                    </div>
+                </div>
+
+                <div class="title-bottom">
+                    <div class="category">
+                        <strong>Category</strong><br />
+                        <a href="#">Horror</a>,
+                        <a href="#">Mistery</a>,
+                        <a href="#">Thriller</a>,
+                    </div>
+                    <a href="#" class="watch-btn">Watch Trailer</a>
+                </div>
+
+            </div>
+            <div class="play-btn-container">
+                <div class="play-btn">
+                    <a href="#">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+                <div id="play" class="play">
+                    <a href="javascript:void" class="close-movie">
+                        <i class="fas fa-times"></i>
+                    </a>
+                    <div class="play-movie">
+                        <!-- <video id="m-vdieo" controls>
+                            <source src="images/Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/Movie.mp4"
+                                type="vdieo/mp4">
+                        </video> -->
+                        <video src="images/Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/Movie.mp4"
+                            controls></video>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <script src="js/jQuery.js"></script>
+    <script>
+
+        let scrollPercentage = () => {
+            let scrollProgress = document.getElementById("progress");
+            let progressValue = document.getElementById("progress-value");
+            let pos = document.documentElement.scrollTop;
+            let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrollValue = Math.round(pos * 100 / calcHeight);
+            scrollProgress.style.background = `conic-gradient(#Ffd700 ${scrollValue}%, #2b2f38 ${scrollValue}%)`;
+
+        }
+
+        window.onscroll = scrollPercentage;
+        window.onload = scrollPercentage;
+
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 20) {
+                $('.navigation').addClass('fix-icon');
+            }
+            else {
+                $('.navigation').removeClass('fix-icon');
+            }
+        });
+    </script>
+</body>
+
+</html>
